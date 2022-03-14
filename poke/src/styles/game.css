@@ -34,7 +34,7 @@
     box-sizing: border-box;
 }
 .jessie {
-    margin-top: 20%;
+    margin-top: 17%;
     position: absolute;
     height: 20rem;
     width: 10rem;
@@ -42,7 +42,7 @@
    
 }
 .Ash {
-    margin-top: 20%;
+    margin-top: 17%;
     position: absolute;
     height: 19rem;
     width: 9.4rem;
@@ -67,4 +67,13 @@
   font-family:"Press Start 2P",cursive;
   font-size: 3rem;
   
+}
+.Pokedex{
+  display: flex;
+  margin-top: 10%;
+  border: orange double;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
