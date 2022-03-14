@@ -30,21 +30,28 @@
     margin-left: 68.5%;
 }
 
-h1.form-header {
-    font-family: "Press Start 2P";
-    font-size: 3em;
-    margin-left: 5%;
-    margin-top: 1%;
-    text-align: center;
+.form-header {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  font-family:"Press Start 2P",cursive;
 }
 .font{
-    height: 15rem;
-    width: 28rem;
-    font-family:"Press Start 2P",cursive;
     display: flex;
-    text-align:justify;
-    font-size: 1.5rem;
-    margin-left: 2%;
+  justify-content:center;
+  align-items:center;
+  text-align:justify;
+  font-size: 1.5rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  flex-direction: column;
+  box-sizing: border-box;
+  
+  font-family:"Press Start 2P",cursive;
     
 }
 
