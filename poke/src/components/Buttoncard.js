@@ -1,13 +1,14 @@
 import React from 'react';
-import './styles/Buttoncard.css';
+import { ButtonContainer } from './styles/Buttoncard';
+import { CgPokemon } from "react-icons/cg";
+
 
 export default function CardButton({ type, onClick }) {
 
-    
-    return (
-        <div className='ButtonContainer' type={type} onClick={onClick} >
-
-            Escolher
-        </div>
+    return(
+        <ButtonContainer type={type} onClick={onClick} >
+            <CgPokemon/>
+            
+        </ButtonContainer>
     )
 }

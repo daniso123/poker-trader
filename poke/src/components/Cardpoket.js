@@ -20,15 +20,15 @@ export default function Cardpoket({ url, onClickCancel, onClickLeft, onClickRigh
     if (type === 'default'){
         return(
             <Card type={type}>
-                <Xp>XP: {poke?.base_experience}</Xp>
+                <Xp>power: {poke?.base_experience}</Xp>
                 <img src = {poke?.sprites?.front_default} alt="pokemon"/>
                 {poke?.name}
                 <Buttons>
-                    <Buttoncard onClick={() => handleLeft()} >
-                        Escolher
+                    <Buttoncard onClick={() => handleLeft()} type={'violeta'}>
+                        
                     </Buttoncard>
-                    <Buttoncard onClick={() => handleRight()} >
-                        Escolher
+                    <Buttoncard onClick={() => handleRight()} type={'red'}>
+                    
                     </Buttoncard>
                 </Buttons>
             </Card>
