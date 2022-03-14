@@ -1,0 +1,50 @@
+.App_bar {
+    height: 100vh;
+    background-color: rgb(148, 23, 23);
+}
+
+.App_body {
+    display: block;
+    position: relative;
+    background-color: rgb(248, 245, 252);
+    height: 26rem;
+    width: 29.188rem;
+    margin: auto;
+    top: 10%;
+    border: black double;
+}
+
+.photo {
+    margin-top: 13%;
+    position: absolute;
+    height: 20rem;
+    width: 10rem;
+    margin-left: 18%;
+}
+
+.pikachu {
+    margin-top: 26%;
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    margin-left: 68.5%;
+}
+
+h1.form-header {
+    font-family: "Press Start 2P";
+    font-size: 3em;
+    margin-left: 5%;
+    margin-top: 1%;
+    text-align: center;
+}
+.font{
+    height: 15rem;
+    width: 28rem;
+    font-family:"Press Start 2P",cursive;
+    display: flex;
+    text-align:justify;
+    font-size: 1.5rem;
+    margin-left: 2%;
+    
+}
+
