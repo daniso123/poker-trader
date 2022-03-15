@@ -2,21 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../styles/game.css";
 import Jessie from "../img/jessie.png";
 import Ash from "../img/ash.png";
-//import Alert from "../components/Alert";
-
-
 import axios from 'axios';
 import Cardpoket from "../components/Cardpoket";
-//import { CgPokemon } from "react-icons/cg";
-
+import { CgPokemon } from "react-icons/cg";
 function Game() {
 
   const [results, setResults] = useState();
-  const [apiUrl, setApiUrl] = useState("https://pokeapi.co/api/v2/pokemon");
-  const [nextPage, setNextPage] = useState();
-  const [prevPage, setPrevPage] = useState();
-  const [fairTrade, setFairTrade] = useState();
-  const [unfairTrade, setUnFairTrade] = useState();
+  const [apiUrl] = useState("https://pokeapi.co/api/v2/pokemon");
   const [violetTeam, setVioletTeam] = useState([]);
   const [redTeam, setRedTeam] = useState([]);
   const [trade, setTrade] = useState({
@@ -29,8 +21,6 @@ function Game() {
   useEffect(() => {
     axios.get(apiUrl).then((res) => {
       setResults(res.data.results);
-      setNextPage(res.data.next);
-      setPrevPage(res.data.previous);
     });
   }, [apiUrl]);
 
@@ -50,6 +40,35 @@ function Game() {
       setRedTeam([...redTeam, pokemon])
     }
   }
+
+  function cancelViolet(id) {
+    let aux = false;
+    let array = [];
+
+    for (let i = 0; i < violetTeam.length; i++) {
+      if (violetTeam[i].id === id && !aux) {
+        aux = true;
+      }
+      else {
+        array.push(violetTeam[i])
+      }
+    };
+    setVioletTeam(array);
+  }
+  function cancelRed(id) {
+    let aux = false;
+    let array = [];
+
+    for (let i = 0; i < redTeam.length; i++) {
+      if (redTeam[i].id === id && !aux) {
+        aux = true;
+      }
+      else {
+        array.push(redTeam[i])
+      }
+    };
+    setRedTeam(array);
+  }
   function replacement() {
     let violetScore = 0;
     let redScore = 0;
@@ -66,7 +85,7 @@ function Game() {
     }
     else {
       if (totalScore > 50) {
-        //setUnFairTrade('A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!');
+
         alert('A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!')
         setTrade({
           scoreViolet: violetScore,
@@ -76,7 +95,7 @@ function Game() {
         });
       }
       else {
-        //setFairTrade('A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!');
+
         alert('A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!');
         setTrade({
           scoreViolet: violetScore,
@@ -94,37 +113,39 @@ function Game() {
       <h1 className="header" > Vamos Jogar! </h1>
       <img src={Jessie}
         className="jessie" />
-      <div className="Team-rocket">
-        <h1 className="Team-tilte">Jessie</h1>
+      <fieldset className="Team-jessie">
+        <legend className="Team-tilte-jessie">JESSIE</legend>
         {violetTeam &&
           violetTeam.map((poke, idx) => (
             <Cardpoket
               type={'chosen'}
               pokemon={poke}
               key={idx}
-
+              onClickCancel={() => cancelViolet(poke.id)}
             />
           ))}
 
 
-      </div>
+      </fieldset>
 
       <img src={Ash}
         className="Ash" />
-      <div className="Team-ash">
-        <h1 className="Team-tilte">Ash</h1>
+      <fieldset className="Team-ash">
+        <legend className="Team-tilte-ash">ASH</legend>
         {redTeam &&
           redTeam.map((poke, idx) => (
             <Cardpoket
               type={'chosen'}
               pokemon={poke}
               key={idx}
-
+              onClickCancel={() => cancelRed(poke.id)}
             />
           ))}
-      </div>
+      </fieldset>
 
-      <div className="exchanges" onClick={() => replacement()} />
+      <div  onClick={() => replacement()}>
+        <CgPokemon className="icon"/>
+      </div>
 
 
 
@@ -141,7 +162,7 @@ function Game() {
             />
           ))}
       </div>
-      
+
     </div>
 
 

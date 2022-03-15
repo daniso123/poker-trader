@@ -9,29 +9,34 @@
   padding: 2vh 1vw;
   background-color: rgb(248, 245, 252);;
 }
-.Team-rocket{
+.Team-jessie{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   height: 25rem;
   width: 27rem;
-  margin: auto;
-  margin-left: 13%;
+  margin-left: 12%;
   top: 10%;
-  border: black double;
+  border: violet double;
   box-sizing: border-box;
+  min-height: 70vh;
+  box-sizing: border-box;
+  backdrop-filter: blur(6px);
 }
 .Team-ash{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 25rem;
-    width: 27rem;
-    margin: auto;
-    margin-left: 14%;
-    top: 10%;
-    border: black double;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 25rem;
+  width: 27rem;
+  margin-left: 17%;
+  top: 10%;
+  border: red double;
+  box-sizing: border-box;
+  min-height: 70vh;
+  box-sizing: border-box;
+ 
+  backdrop-filter: blur(6px);
 }
 .jessie {
     margin-top: 17%;
@@ -49,13 +54,21 @@
     margin-left: 15%;
     
 }
-.Team-title{
+.Team-tilte-jessie{
   display: flex;
   font-family:"Press Start 2P",cursive;
   justify-content: center;
-  font-size: 1.5rem;
-  color: rgb(14, 12, 12);
-  width: 100%;
+  font-size: 1rem;
+  color: violet;
+  
+}
+.Team-tilte-ash{
+  display: flex;
+  font-family:"Press Start 2P",cursive;
+  justify-content: center;
+  font-size: 1rem;
+  color: red;
+  
 }
 .header{
   display: flex;
@@ -65,28 +78,26 @@
   box-sizing: border-box;
   width: 100%;
   font-family:"Press Start 2P",cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
   
 }
 .Pokedex{
   display: flex;
-  margin-top: 10%;
+  margin-top: 1.5%;
   border: orange double;
 
   justify-content: center;
   flex-wrap: wrap;
   box-sizing: border-box;
 }
-.exchanges{
+.icon{
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: brown;
   align-items: center;
-  margin-top: 2%;
+  margin: 25px 0 0 50px;
+  background-color: red;
+  color: white;
   border-radius: 100px 100px 100px 100px;
   width: 100px;
   height: 100px;
-  
-  
-  cursor: pointer;
 }

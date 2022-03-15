@@ -10,7 +10,9 @@ const getStyle = (type) => {
     return `
         display: flex;
         justify-content: flex-start;
-        padding-top: 15px;
+        padding-top: 10px;
+        height: 190px;
+        width: 150px;
       `;
   }
 };
@@ -37,7 +39,7 @@ export const Buttons = styled.div`
   width: 100%;
   height: 20%;
 `;
-export const Xp = styled.div`
+export const Experience = styled.div`
   width: 100%;
   display: flex;
   box-sizing: border-box;
