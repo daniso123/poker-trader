@@ -28,7 +28,7 @@ export default function Cardpoket({ url, onClickCancel, onClickLeft, onClickRigh
                     
                 </Xp>
                 <Buttons>
-                    <Buttoncard onClick={() => handleLeft()} type={'violeta'}>
+                    <Buttoncard onClick={() => handleLeft()} type={'violet'}>
                         
                     </Buttoncard>
                     <Buttoncard onClick={() => handleRight()} type={'red'}>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const getStyle = (type) => {
-  if (type === "violeta") {
+  if (type === "violet") {
     return `
     border-radius: 100px 100px 100px 100px;
     width: 30px;
