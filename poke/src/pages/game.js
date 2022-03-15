@@ -5,7 +5,7 @@ import Ash from "../img/ash.png";
 
 import axios from 'axios';
 import Cardpoket from "../components/Cardpoket";
-import { CgPokemon } from "react-icons/cg";
+//import { CgPokemon } from "react-icons/cg";
 
 function Game() {
 
@@ -66,7 +66,7 @@ function Game() {
       if (totalScore > 50) {
         setUnFairTrade('A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!');
         setTrade({
-          scoreBlue: violetScore,
+          scoreViolet: violetScore,
           scoreRed: redScore,
           scoreTotal: totalScore,
           tradeStatus: 'A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!'
@@ -75,7 +75,7 @@ function Game() {
       else {
         setFairTrade('A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!');
         setTrade({
-          scoreBlue: violetScore,
+          scoreViolet: violetScore,
           scoreRed: redScore,
           scoreTotal: totalScore,
           tradeStatus: 'A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!'
@@ -98,7 +98,7 @@ function Game() {
               type={'chosen'}
               pokemon={poke}
               key={idx}
-              
+
             />
           ))}
 
@@ -115,13 +115,15 @@ function Game() {
               type={'chosen'}
               pokemon={poke}
               key={idx}
-              
+
             />
           ))}
       </div>
 
+      <button className="exchanges" onClick={() => replacement()}>
+        
+      </button>
 
-      <CgPokemon className="exchanges" onClick={() => replacement()} />
 
       <div className="Pokedex">
         {results &&
