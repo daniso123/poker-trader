@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../styles/game.css";
 import Jessie from "../img/jessie.png";
 import Ash from "../img/ash.png";
+//import Alert from "../components/Alert";
+
 
 import axios from 'axios';
 import Cardpoket from "../components/Cardpoket";
@@ -60,25 +62,27 @@ function Game() {
 
     let totalScore = Math.abs(violetScore - redScore);
     if (violetScore === 0 || redScore === 0) {
-      alert('Os lados precisam term pelo menos 1 card')
+      alert('Os lados precisam term pelo menos 1 card');
     }
     else {
       if (totalScore > 50) {
-        setUnFairTrade('A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!');
+        //setUnFairTrade('A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!');
+        alert('A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!')
         setTrade({
           scoreViolet: violetScore,
           scoreRed: redScore,
           scoreTotal: totalScore,
-          tradeStatus: 'A troca não é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados não são próximos!'
+          tradeStatus: 'Troca Injusta'
         });
       }
       else {
-        setFairTrade('A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!');
+        //setFairTrade('A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!');
+        alert('A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!');
         setTrade({
           scoreViolet: violetScore,
           scoreRed: redScore,
           scoreTotal: totalScore,
-          tradeStatus: 'A troca é justa, pois a quantidade de expêriencia sobre a quantidade de lutas em ambos os lados de todos os pokémons selecionados são próximos!'
+          tradeStatus: 'Troca Justa '
         });
       }
     }
@@ -120,9 +124,9 @@ function Game() {
           ))}
       </div>
 
-      <button className="exchanges" onClick={() => replacement()}>
-        
-      </button>
+      <div className="exchanges" onClick={() => replacement()} />
+
+
 
 
       <div className="Pokedex">
@@ -137,10 +141,7 @@ function Game() {
             />
           ))}
       </div>
-
-
-
-
+      
     </div>
 
 
