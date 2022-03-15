@@ -16,16 +16,17 @@ const getStyle = (type) => {
 };
 
 export const Card = styled.div`
-  height: 190px;
+  height: 250px;
   width: 170px;
   border-radius: 10px;
+  border: orange double;
   margin: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(8px + 2vmin);
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: orange;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   ${(props) => getStyle(props.type)}
 `;
@@ -41,9 +42,10 @@ export const Xp = styled.div`
   display: flex;
   box-sizing: border-box;
   justify-content: flex-start;
-  padding: 5px 10px 0;
-  font-size: 0.95rem;
-  color: grey;
+  padding: 0 10px 0;
+  font-size: 0.90rem;
+  color: black;
+  margin-left: 25%
 `;
 export const Cancel = styled.div`
   width: 100%;
@@ -51,4 +53,14 @@ export const Cancel = styled.div`
   box-sizing: border-box;
   justify-content: flex-end;
   padding: 0 10px;
+`;
+export const Cardphoto = styled.div`
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  border: orange double;
+  margin: 18px;
+  box-sizing: border-box;
+  background-color: #ffff;
+  
 `;

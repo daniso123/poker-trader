@@ -20,7 +20,7 @@ function home() {
                 </h1>
                 <Link style={{ textDecoration: "none" }} to={{ pathname: "/game" }}>
                     <ButtonBar
-                        label={'Vamos começar!'}
+                        label={'▶ Vamos começar!'}
                     />
                 </Link>
             </div>

@@ -1,5 +1,11 @@
 .App_bar {
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+  min-width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
     background-color: rgb(148, 23, 23);
 }
 
@@ -15,19 +21,19 @@
 }
 
 .photo {
-    margin-top: 13%;
+    margin-top: 24%;
     position: absolute;
     height: 20rem;
     width: 10rem;
-    margin-left: 18%;
+    margin-right: 50%;
 }
 
 .pikachu {
-    margin-top: 26%;
+    margin-top: 37%;
     position: absolute;
     height: 10rem;
     width: 10rem;
-    margin-left: 68.5%;
+    margin-left: 50%;
 }
 
 .form-header {
@@ -39,6 +45,8 @@
   box-sizing: border-box;
   width: 100%;
   font-family:"Press Start 2P",cursive;
+
+  
 }
 .font{
     display: flex;

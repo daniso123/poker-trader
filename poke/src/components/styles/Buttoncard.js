@@ -17,7 +17,7 @@ const getStyle = (type) => {
     border-radius: 100px 100px 100px 100px;
     width: 30px;
     height: 30px;
-      background: #cf3e26;
+    background: #cf3e26;
     `;
   }
 };  

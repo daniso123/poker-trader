@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Buttons, Xp, Cancel } from './styles/Cardpoket';
+import { Card, Buttons, Xp, Cancel, Cardphoto } from './styles/Cardpoket';
 import Buttoncard from "./Buttoncard";
 import axios from "axios";
 import { FaTimes } from "react-icons/fa";
@@ -20,9 +20,13 @@ export default function Cardpoket({ url, onClickCancel, onClickLeft, onClickRigh
     if (type === 'default'){
         return(
             <Card type={type}>
-                <Xp>power: {poke?.base_experience}</Xp>
-                <img src = {poke?.sprites?.front_default} alt="pokemon"/>
+                <Cardphoto>
+                <img  src = {poke?.sprites?.front_default} alt="pokemon"/>
+                </Cardphoto>
                 {poke?.name}
+                <Xp>experience: {poke?.base_experience}
+                    
+                </Xp>
                 <Buttons>
                     <Buttoncard onClick={() => handleLeft()} type={'violeta'}>
                         
