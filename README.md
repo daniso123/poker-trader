@@ -26,7 +26,7 @@ $ npm start
 ```
 
 ### Heroku Link
-[Poke Trader](https://poket-trader.herokuapp.com/)
+[Poke Trader](https://apppoketrader.herokuapp.com/)
 
 ### Tecnologia Usada
 
