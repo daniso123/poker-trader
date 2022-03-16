@@ -1,16 +1,29 @@
 import React, { useEffect, useState } from "react";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Modal from 'react-bootstrap/Modal';
 import "../styles/game.css";
+
 import Jessie from "../img/jessie.png";
 import Ash from "../img/ash.png";
-import axios from 'axios';
+
 import Cardpoket from "../components/Cardpoket";
+import HistoryButton from "../components/HistoryButton";
+import { TradeInfo, AlignHistory } from '../components/styles/Cardpoket';
+
+import axios from 'axios';
 import { CgPokemon } from "react-icons/cg";
+
+
+
 function Game() {
 
   const [results, setResults] = useState();
   const [apiUrl] = useState("https://pokeapi.co/api/v2/pokemon");
   const [violetTeam, setVioletTeam] = useState([]);
   const [redTeam, setRedTeam] = useState([]);
+  const [history, setHistory] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
   const [trade, setTrade] = useState({
     scoreViolet: 0,
     scoreRed: 0,
@@ -105,12 +118,60 @@ function Game() {
         });
       }
     }
+    setHistory([...history, trade]);
+  }
+  function HistoryGrid(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        style={{
+          color: 'rgb(148, 23, 23)',
+          backgroundColor: "rgb(148, 23, 23)",
 
+        }}
+      >
+        <Modal.Header closeButton
+          style={{
+            border: "black double"
+          }}
+        >
+          <Modal.Title id="contained-modal-title-vcenter"
+          style={{
+            fontFamily:"Press Start 2P"
+          }}
+          >
+            Historico de trocas de pokemons
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body
+          style={{
+            height: "26rem",
+            width: "50rem",
+            border: "black double"
+          }}
+        >
+          {history &&
+            history.map((trade, index) => (
+              <TradeInfo key={index}>
+                <p>{index}</p>
+                <p>Lado da Jessie: {trade.scoreViolet}</p>
+                <p>Lado do Ash: {trade.scoreRed}</p>
+                <p>Diferença de expêriencia: {trade.scoreTotal}</p>
+                <p className="status" >{trade.tradeStatus}</p>
+              </TradeInfo>
+            ))}
+        </Modal.Body>
+      </Modal>
+    );
   }
 
   return (
     <div className="Container">
       <h1 className="header" > Vamos Jogar! </h1>
+
       <img src={Jessie}
         className="jessie" />
       <fieldset className="Team-jessie">
@@ -124,8 +185,7 @@ function Game() {
               onClickCancel={() => cancelViolet(poke.id)}
             />
           ))}
-
-
+          
       </fieldset>
 
       <img src={Ash}
@@ -143,12 +203,16 @@ function Game() {
           ))}
       </fieldset>
 
-      <div  onClick={() => replacement()}>
-        <CgPokemon className="icon"/>
+      <div onClick={() => replacement()}>
+        <CgPokemon className="icon" />
       </div>
-
-
-
+      <AlignHistory>
+        <HistoryButton label={'▶ Histórico'} onClick={() => setModalShow(true)} />
+      </AlignHistory>
+      <HistoryGrid
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
 
       <div className="Pokedex">
         {results &&
@@ -162,13 +226,8 @@ function Game() {
             />
           ))}
       </div>
-
     </div>
-
-
   );
-
-
 }
 
 export default Game;

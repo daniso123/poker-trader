@@ -35,7 +35,6 @@
   box-sizing: border-box;
   min-height: 70vh;
   box-sizing: border-box;
- 
   backdrop-filter: blur(6px);
 }
 .jessie {
@@ -92,7 +91,7 @@
 }
 .icon{
   box-sizing: border-box;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 25px 0 rgba(0, 0, 0, 0.19);
   align-items: center;
   margin: 25px 0 0 50px;
   background-color: red;
@@ -100,4 +99,14 @@
   border-radius: 100px 100px 100px 100px;
   width: 100px;
   height: 100px;
+
+}
+.history-result{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 7px;
+  border-bottom: 1px solid lightgrey;
+  
 }

@@ -66,3 +66,21 @@ export const Cardphoto = styled.div`
   background-color: #ffff;
   
 `;
+export const TradeInfo = styled.div `
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 7px;
+  border-bottom: 1px solid lightgrey;
+  .status{
+    font-weight: 400;
+  }
+`
+export const AlignHistory = styled.div `
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  
+`
