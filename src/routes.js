@@ -9,8 +9,8 @@ export default function Routee() {
     return (
         <BrowserRouter>
             <Routes>
-            <Route path="/" element={<Home/>} exact />
-                <Route element={<Game/>} path="/game" />
+            <Route exact path="/" element={<Home/>} />
+                <Route path="/game" element={<Game/>} />
                
             </Routes>
 
