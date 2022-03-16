@@ -120,7 +120,47 @@ function Game() {
     }
     setHistory([...history, trade]);
   }
+
   function HistoryGrid(props) {
+
+    if (trade.scoreViolet === 0 || trade.scoreRed === 0) {
+      return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        style={{
+          color: 'rgb(148, 23, 23)',
+          backgroundColor: "rgb(148, 23, 23)",
+
+        }}
+      >
+        <Modal.Header closeButton
+          style={{
+            border: "black double"
+          }}
+        >
+          <Modal.Title id="contained-modal-title-vcenter"
+            style={{
+              fontFamily: "Press Start 2P"
+            }}
+          >
+            Historico de trocas de pokemons
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body
+          style={{
+            height: "26rem",
+            width: "50rem",
+            border: "black double"
+          }}
+        >
+            
+        </Modal.Body>
+      </Modal>);
+    }
+    else {
     return (
       <Modal
         {...props}
@@ -139,9 +179,9 @@ function Game() {
           }}
         >
           <Modal.Title id="contained-modal-title-vcenter"
-          style={{
-            fontFamily:"Press Start 2P"
-          }}
+            style={{
+              fontFamily: "Press Start 2P"
+            }}
           >
             Historico de trocas de pokemons
           </Modal.Title>
@@ -163,9 +203,11 @@ function Game() {
                 <p className="status" >{trade.tradeStatus}</p>
               </TradeInfo>
             ))}
+            
         </Modal.Body>
       </Modal>
     );
+            }
   }
 
   return (
@@ -185,7 +227,7 @@ function Game() {
               onClickCancel={() => cancelViolet(poke.id)}
             />
           ))}
-          
+
       </fieldset>
 
       <img src={Ash}
