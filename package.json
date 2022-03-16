@@ -1,6 +1,9 @@
 {
   "name": "poke-trader",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.x"
+  },
   "private": true,
   "dependencies": {
     "@fontsource/press-start-2p": "^4.5.3",
